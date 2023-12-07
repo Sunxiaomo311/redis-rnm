@@ -1,0 +1,27 @@
+# intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+
+.DS_Store
+# logs
+logs/
+*_logs/
+*.log
+
+target
+out
+build
+deploy
+
+*.bat
+*.bak
+*.class
+*/src/test
+# *.log
+Dockerfile
+.project
+.settings/
+
+
