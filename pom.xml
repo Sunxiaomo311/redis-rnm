@@ -21,6 +21,7 @@
     <!--模块管理-->
     <modules>
         <module>redis-rnm-core</module>
+        <module>redis-rnm-demo</module>
     </modules>
 
     <!--参数管理-->
@@ -39,6 +40,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 
