@@ -29,5 +29,22 @@ public class ClearRedisKeyUtil {
                 transactionId, endTime / 1000 / 60, endTime / 1000);
     }
 
+    /**
+     * 给指定key设置指定过期时间
+     *
+     * @param transactionId 要清理的key，例如：bonus:transaction:[^hash]*
+     * @param ttl 过期时间（秒）
+     */
+    public static void clearSpecifiedKey(String transactionId, Integer ttl) {
+        long time = System.currentTimeMillis();
+        boolean flag = ClearRedisService.matchScanAndSetExpire(transactionId, ttl);
+        long endTime = System.currentTimeMillis() - time;
+        if (!flag) {
+            log.error("---> clearSpecifiedKey transactionId {} ERROR!", transactionId);
+        }
+        log.info("---> clearSpecifiedKey transactionId {} SUCCESS. use time {}min, {}s",
+                transactionId, endTime / 1000 / 60, endTime / 1000);
+    }
+
 
 }
